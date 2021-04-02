@@ -35,9 +35,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Trader Joe's Product Name Generator
-          </p>
+          <h1>
+            Trader Joe's
+          </h1>
+          <p>(unofficial) Product Name Generator</p>
           <LambdaDemo />
         </header>
       </div>

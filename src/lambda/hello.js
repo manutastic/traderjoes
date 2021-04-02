@@ -1,5 +1,5 @@
 const descriptors = [
-  'Everthing but the',
+  'Everything but the',
   '5 Cheese',
   'Dark Chocolate',
   'Asian Inspired',

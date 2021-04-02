@@ -1,3 +1,7 @@
+* {
+  font-family: 'Averia Serif Libre', serif;
+}
+
 .App {
   text-align: center;
 }
@@ -8,14 +12,24 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffecd1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.App-header h1 {
+  font-family: 'Dela Gothic One', sans-serif;
+  color: #B31100;
+  margin: 0;
+}
+
+.App-header p {
+  margin-top: 0;
+  margin-bottom: 6em;
 }
 
 .App-link {
