@@ -29,11 +29,15 @@
 
 .App-header p {
   margin-top: 0;
-  margin-bottom: 6em;
+  margin-bottom: 3em;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.productImage {
+  max-width: 15rem;
 }
 
 @keyframes App-logo-spin {

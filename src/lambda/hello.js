@@ -5,6 +5,12 @@ const descriptors = [
   'Asian Inspired',
   'Crispy, Crunchy',
   'Gluten Free',
+  'Unexpected',
+  "A Midsummer Night's",
+  'Chili Spiced',
+  'Pumpkin Spiced',
+  'Triple Ginger',
+  'Candy Cane',
 ]
 const ingredients = [
   'Masala',
@@ -14,7 +20,30 @@ const ingredients = [
   'Balsamic',
   'Edamame',
   'Buffalo',
-  'Whole Grain'
+  'Whole Grain',
+  'Brussel Sprout',
+  'Peruvian',
+  'Key Lime',
+  'Kale',
+  'Coconut Oil',
+  'Cookie Butter',
+  'Basmati Rice',
+  'Corned Beef',
+  'Caramel Filled',
+  'Powerberry',
+  'Bagel',
+  'Persian Cucumber',
+  'Cold Brew',
+  'Paneer',
+  'Turkey & Gravy',
+  'Riced Cauliflower',
+  'Joe-Joe',
+  "Cold Pressed",
+  'Maple',
+  'Mexican Style',
+  'Mac & Cheese',
+  'Mandarin Orange',
+  'Superfood',
 ]
 const products = [
   'Nuggets',
@@ -26,13 +55,30 @@ const products = [
   'Granola',
   'Spread',
   'Bites',
-  'Kombucha'
+  'Kombucha',
+  'Simmer Sauce',
+  'Seasoning Blend',
+  'Body Butter',
+  'Dog Treats',
+  'Tuscan Pane',
+  'Vodka',
+  'Winter Ale',
+  'Stir Fry',
+  'Coffee',
+  'Dried Fruit Blend',
+  'Pizza Crust',
+  'Juice',
+  'Salsa',
+  'Maple Ladders',
+  'Gelato',
+  'Pasta Sauce'
 ]
+
 export function handler(event, context, callback) {
-  console.log('queryStringParameters', event.queryStringParameters)
   const descriptor = descriptors[Math.floor(Math.random() * (descriptors.length))];
   const ingredient = ingredients[Math.floor(Math.random() * (ingredients.length))];
   const product = products[Math.floor(Math.random() * (products.length))];
+
   callback(null, {
     statusCode: 200,
     body: JSON.stringify({ msg: descriptor + ' ' + ingredient + ' ' + product }),
