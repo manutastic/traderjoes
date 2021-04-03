@@ -31,7 +31,8 @@ const descriptors = [
   'Keto',
   'Pickled',
   'Fermented',
-  'Tumeric Ginger'
+  'Tumeric Ginger',
+  'Buttered'
 ]
 const ingredients = [
   'Masala',
@@ -130,10 +131,6 @@ export function handler(event, context, callback) {
   const descriptor = descriptors[Math.floor(Math.random() * (descriptors.length))];
   const ingredient = ingredients[Math.floor(Math.random() * (ingredients.length))];
   const product = products[Math.floor(Math.random() * (products.length))];
-
-  console.log(descriptors.length);
-  console.log(ingredients.length);
-  console.log(products.length);
 
   callback(null, {
     statusCode: 200,
