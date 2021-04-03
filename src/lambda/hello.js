@@ -11,6 +11,27 @@ const descriptors = [
   'Pumpkin Spiced',
   'Triple Ginger',
   'Candy Cane',
+  'Toasted',
+  'Honey Butter',
+  'Sweet Potato',
+  'Chocolate Covered',
+  'Cinnamon Dusted',
+  'French Inspired',
+  'French',
+  'Mexican',
+  'Mexican Inspired',
+  'Vegan',
+  'Grilled',
+  'Sea-Salt',
+  'Honey Sriracha',
+  'Thinly Sliced',
+  'Whipped',
+  'Sweet & Sour',
+  'Sweet & Spicy',
+  'Keto',
+  'Pickled',
+  'Fermented',
+  'Tumeric Ginger'
 ]
 const ingredients = [
   'Masala',
@@ -44,6 +65,15 @@ const ingredients = [
   'Mac & Cheese',
   'Mandarin Orange',
   'Superfood',
+  'Corn',
+  'Elote',
+  'Brioche',
+  'Teriyaki',
+  'Tapenade',
+  'Apple Cider',
+  'Cinnamon Sugar',
+  'Kimchi',
+  'Peppermint'
 ]
 const products = [
   'Nuggets',
@@ -71,13 +101,39 @@ const products = [
   'Salsa',
   'Maple Ladders',
   'Gelato',
-  'Pasta Sauce'
+  'Pasta Sauce',
+  'Tea Concentrate',
+  'Sparkling Water',
+  'Muffins',
+  'Cake Mix',
+  'Cookie Mix',
+  'Smoothie Blend',
+  'Taco Product',
+  'Gnocchi',
+  'Gummies',
+  'Dunkers',
+  'Laundry Detergent',
+  'Cat Treats',
+  'Nut Butter',
+  'Macaroons',
+  'Slices',
+  'Vinagrette',
+  'Mustard',
+  'Dumplings',
+  'Bao Buns',
+  'Pancakes',
+  'Desert Bars',
+  'Kettle Chips',
 ]
 
 export function handler(event, context, callback) {
   const descriptor = descriptors[Math.floor(Math.random() * (descriptors.length))];
   const ingredient = ingredients[Math.floor(Math.random() * (ingredients.length))];
   const product = products[Math.floor(Math.random() * (products.length))];
+
+  console.log(descriptors.length);
+  console.log(ingredients.length);
+  console.log(products.length);
 
   callback(null, {
     statusCode: 200,
