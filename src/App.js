@@ -19,20 +19,19 @@ class LambdaDemo extends Component {
 
     const images = [item01, item02, item03, item04, item05, item06];
     const image = images[Math.floor(Math.random() * (images.length))];
-    const filter = Math.floor(Math.random() * 3) * 10 + 'deg';
 
     this.setState({ loading: true })
     fetch("/.netlify/functions/" + api)
       .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg, image, filter }))
+      .then(json => this.setState({ loading: false, msg: json.msg, image }))
   }
 
 
   render() {
-    const { loading, msg, image, filter } = this.state
+    const { loading, msg, image } = this.state
     return (
       <p>
-        {image ? <img className="productImage" style={{ filter: `hue-rotate(${filter})` }} src={image} alt="Product" /> : null}
+        {image ? <img className="productImage" src={image} alt="Product" /> : null}
         <br />
         <span>{msg}</span>
         <br />
