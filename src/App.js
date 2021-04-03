@@ -51,7 +51,7 @@ class App extends Component {
           <h1>
             Trader Joe's
           </h1>
-          <p>(unofficial) Product Name Generator</p>
+          <p className={'subheader'}>(unofficial) Product Name Generator</p>
           <LambdaDemo />
         </header>
       </div>

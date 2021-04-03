@@ -32,6 +32,10 @@
   margin-bottom: 3em;
 }
 
+.subheader {
+  font-size: .7em;
+}
+
 .App-header button {
   padding: .5em 1em;
   margin-top: 1em;
