@@ -8,50 +8,48 @@ import item04 from "./assets/item04.png";
 import item05 from "./assets/item05.png";
 import item06 from "./assets/item06.png";
 
-class LambdaDemo extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = { loading: false, msg: null, image: null, filter: 0 }
   }
 
-  handleClick = api => e => {
-    e.preventDefault()
+  getProduct = () => {
 
     const images = [item01, item02, item03, item04, item05, item06];
     const image = images[Math.floor(Math.random() * (images.length))];
 
     this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
+    fetch("/.netlify/functions/hello")
       .then(response => response.json())
       .then(json => this.setState({ loading: false, msg: json.msg, image }))
+  }
+
+  componentDidMount() {
+    this.getProduct();
   }
 
 
   render() {
     const { loading, msg, image } = this.state
-    return (
-      <p>
-        {image ? <img className="productImage" src={image} alt="Product" /> : null}
-        <br />
-        <span>{msg}</span>
-        <br />
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "New Product Please"}</button>
-        {/* <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button> */}
-      </p>
-    )
-  }
-}
+    const words = msg && msg.split(' ');
+    const lastTwo = words && <span class="nowrap"> {words[words.length - 2] + ' ' + words[words.length - 1]}</span>;
+    if (words) words.splice(-2, 2);
+    const productName = words && words.join(' ');
 
-class App extends Component {
-  render() {
+    const productImage = <div className="productImage" style={{ backgroundImage: `url(${image})` }}></div>
     return (
       <div className="App">
         <header className="App-header">
           <h1>
             Trader Joe's
           </h1>
-          <p className={'subheader'}>(unofficial) Product Name Generator</p>
-          <LambdaDemo />
+          <p className={'subheader'}>(Unofficial) Product Name Generator</p>
+          <div className="product">
+            {image && productImage}
+            <span className="productName">{productName}{lastTwo}</span>
+          </div>
+          <button className="newProduct" onClick={() => this.getProduct()}>{loading ? "Loading..." : "New Product Please"}</button>
         </header>
       </div>
     )
